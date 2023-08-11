@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db-postgress-evento:
+    image: postgres:alpine
+    ports:
+      - "5435:5432"
+    container_name: "db-postgres-curso"
+    restart: always
+    volumes:
+      - ./banco-de-dados-curso-api:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+
+volumes:
+  banco-de-dados-curso-api:
